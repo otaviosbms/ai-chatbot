@@ -1,0 +1,359 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Agente {
+  atualizadoEm: DateTime!
+  criadoEm: DateTime!
+  empresaId: ID!
+  etapas: [Etapa!]!
+  id: ID!
+  nome: String!
+}
+
+type ArtigoConhecimento {
+  ativo: Boolean!
+  atualizadoEm: DateTime!
+  conteudo: String!
+  criadoEm: DateTime!
+  empresaId: ID!
+  id: ID!
+  indexacao: StatusIndexacao!
+  motivoIndexacao: String
+  pergunta: String
+  tags: [String!]!
+  tipo: TipoArtigo!
+  titulo: String!
+}
+
+input AtualizarArtigoInput {
+  ativo: Boolean
+  conteudo: String
+  empresaId: ID!
+  pergunta: String
+  tags: [String!]
+  tipo: TipoArtigo
+  titulo: String
+}
+
+input AtualizarEtapaInput {
+  ativa: Boolean
+  empresaId: ID!
+  mensagem: String
+}
+
+enum AutorMensagem {
+  ATENDENTE
+  BOT
+  CLIENTE
+}
+
+enum ChaveAgente {
+  cpf
+  email
+  handoff
+  nome
+  protocolo
+  telefone
+}
+
+type ConfiguracaoLlm {
+  modelo: String
+  modeloEmbedding: String!
+  modo: ModoLlm!
+  servidorConfigurado: Boolean!
+}
+
+type ConfiguracaoModulo {
+  ativo: Boolean!
+  atualizadoEm: DateTime!
+  config: JSON!
+  criadoEm: DateTime!
+  empresaId: ID!
+  id: ID!
+  modulo: ModuloTipo!
+}
+
+type Conversa {
+  agenteId: ID
+  atualizadoEm: DateTime!
+  canal: String!
+  contatoId: String!
+  criadoEm: DateTime!
+  empresaId: ID!
+  estado: EstadoConversa!
+  etapaAtualId: ID
+  etapasCumpridas: [ID!]!
+  id: ID!
+  mensagens: [Mensagem!]!
+  saudacaoDita: Boolean!
+  ultimaMensagemEm: DateTime!
+  valoresSlot: JSON!
+}
+
+input CriarArtigoInput {
+  ativo: Boolean
+  conteudo: String!
+  empresaId: ID!
+  pergunta: String
+  tags: [String!]
+  tipo: TipoArtigo!
+  titulo: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Documento {
+  atualizadoEm: DateTime!
+  criadoEm: DateTime!
+  empresaId: ID!
+  id: ID!
+  indexacao: StatusIndexacao!
+  mime: String!
+  motivoErro: String
+  motivoIndexacao: String
+  nome: String!
+  quantidadeTrechos: Int
+  status: StatusDocumento!
+}
+
+enum EfeitoEtapa {
+  handoff
+  protocolo
+}
+
+type Empresa {
+  ativa: Boolean!
+  atualizadoEm: DateTime!
+  criadoEm: DateTime!
+  id: ID!
+  nome: String!
+}
+
+input EntrarInput {
+  email: String!
+  senha: String!
+}
+
+input EnviarDocumentoInput {
+  arquivoBase64: String
+  conteudo: String
+  empresaId: ID!
+  mime: String!
+  nome: String!
+}
+
+input EnviarMensagemInput {
+  canal: String!
+  contatoId: String!
+  empresaId: ID!
+  texto: String!
+}
+
+enum EstadoConversa {
+  AGUARDANDO_HUMANO
+  BOT
+  ENCERRADA
+  HUMANO
+}
+
+type Etapa {
+  agenteId: ID!
+  ativa: Boolean!
+  atualizadoEm: DateTime!
+  chave: ChaveAgente
+  criadoEm: DateTime!
+  efeito: EfeitoEtapa
+  empresaId: ID!
+  id: ID!
+  mensagem: String!
+  nome: String!
+  ordem: Int!
+  slot: Slot
+}
+
+type HealthStatus {
+  checkedAt: DateTime!
+  database: String!
+  status: String!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Mensagem {
+  autor: AutorMensagem!
+  criadoEm: DateTime!
+  id: ID!
+  texto: String!
+}
+
+enum ModoLlm {
+  cliente
+  servidor
+}
+
+enum ModuloTipo {
+  ATENDIMENTO_GERAL
+  BASE_CONHECIMENTO
+  SAC
+  TRANSFERENCIA_HUMANA
+}
+
+type Mutation {
+  atualizarArtigo(id: ID!, input: AtualizarArtigoInput!): ArtigoConhecimento!
+  atualizarEtapa(id: ID!, input: AtualizarEtapaInput!): Etapa!
+  atualizarStatusProtocolo(empresaId: ID!, id: ID!, status: StatusProtocolo!): Protocolo!
+  criarArtigo(input: CriarArtigoInput!): ArtigoConhecimento!
+  devolverConversaAoBot(conversaId: ID!, empresaId: ID!): Conversa!
+  encerrarConversa(conversaId: ID!, empresaId: ID!): Conversa!
+  entrar(input: EntrarInput!): Sessao!
+  enviarDocumento(input: EnviarDocumentoInput!): Documento!
+  enviarMensagem(input: EnviarMensagemInput!): RespostaChat!
+  registrar(input: RegistrarInput!): Sessao!
+  reindexarConhecimento(empresaId: ID!): Int!
+  removerArtigo(empresaId: ID!, id: ID!): Boolean!
+  removerDocumento(empresaId: ID!, id: ID!): Boolean!
+  reordenarEtapas(input: ReordenarEtapasInput!): [Etapa!]!
+  responderComoAtendente(conversaId: ID!, empresaId: ID!, texto: String!): Mensagem!
+  salvarConfiguracaoModulo(ativo: Boolean!, config: JSON!, empresaId: ID!, modulo: ModuloTipo!): ConfiguracaoModulo!
+  transferirParaHumano(conversaId: ID!, empresaId: ID!): Conversa!
+}
+
+type Protocolo {
+  atualizadoEm: DateTime!
+  conversaId: ID!
+  criadoEm: DateTime!
+  descricao: String!
+  empresaId: ID!
+  encaminhadoParaHumano: Boolean!
+  id: ID!
+  numero: String!
+  status: StatusProtocolo!
+  tipo: TipoProtocolo!
+}
+
+type Query {
+  agente(empresaId: ID!, id: ID!): Agente!
+  agentes(empresaId: ID!): [Agente!]!
+  artigos(busca: String, empresaId: ID!): [ArtigoConhecimento!]!
+  configuracaoLlm: ConfiguracaoLlm!
+  configuracoes(empresaId: ID!): [ConfiguracaoModulo!]!
+  conversa(empresaId: ID!, id: ID!): Conversa!
+  conversasAguardandoHumano(empresaId: ID!): [Conversa!]!
+  documentos(empresaId: ID!): [Documento!]!
+  health: HealthStatus!
+  modelosLlm: [String!]!
+  protocolo(empresaId: ID!, numero: String!): Protocolo
+  protocolos(empresaId: ID!, status: StatusProtocolo): [Protocolo!]!
+  registroAberto: Boolean!
+  sessaoAtual: Sessao!
+  testarBusca(consulta: String!, empresaId: ID!, limite: Int): [TrechoBusca!]!
+  trechosDoArtigo(artigoId: ID!, empresaId: ID!): [TrechoIndexado!]!
+  trechosDoDocumento(documentoId: ID!, empresaId: ID!): [TrechoIndexado!]!
+}
+
+input RegistrarInput {
+  email: String!
+  nomeEmpresa: String!
+  senha: String!
+}
+
+input ReordenarEtapasInput {
+  agenteId: ID!
+  empresaId: ID!
+  etapaIds: [ID!]!
+}
+
+type RespostaChat {
+  conversaId: ID!
+  estado: EstadoConversa!
+  resposta: Mensagem
+}
+
+type Sessao {
+  empresa: Empresa!
+  token: String!
+  usuario: Usuario!
+}
+
+type Slot {
+  agenteId: ID!
+  atualizadoEm: DateTime!
+  criadoEm: DateTime!
+  empresaId: ID!
+  etapaId: ID!
+  id: ID!
+  nome: String!
+  obrigatorio: Boolean!
+  tipo: TipoSlot!
+}
+
+enum StatusDocumento {
+  ERRO
+  PROCESSANDO
+  PRONTO
+}
+
+enum StatusIndexacao {
+  ERRO
+  PENDENTE
+  PROCESSANDO
+  PRONTO
+}
+
+enum StatusProtocolo {
+  ABERTO
+  EM_ANDAMENTO
+  RESOLVIDO
+}
+
+enum TipoArtigo {
+  INSTRUCAO
+  PERGUNTA_RESPOSTA
+}
+
+enum TipoProtocolo {
+  DUVIDA
+  RECLAMACAO
+  SOLICITACAO
+}
+
+enum TipoSlot {
+  cpf
+  email
+  numero
+  telefone
+  texto
+}
+
+type TrechoBusca {
+  id: ID!
+  origem: String!
+  score: Float!
+  scorePalavra: Float
+  scoreVetor: Float
+  texto: String!
+  titulo: String!
+}
+
+type TrechoIndexado {
+  ativo: Boolean!
+  id: ID!
+  modeloEmbedding: String
+  ordem: Int!
+  secao: String
+  texto: String!
+  titulo: String!
+}
+
+type Usuario {
+  criadoEm: DateTime!
+  email: String!
+  id: ID!
+}

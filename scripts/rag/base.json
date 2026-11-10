@@ -1,0 +1,92 @@
+{
+  "artigos": [
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Formas de pagamento",
+      "pergunta": "Quais formas de pagamento vocês aceitam?",
+      "conteudo": "Aceitamos pix, boleto bancário e cartão de crédito das bandeiras Visa, Mastercard e Elo."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Parcelamento",
+      "pergunta": "Posso parcelar a compra?",
+      "conteudo": "Compras no cartão de crédito podem ser divididas em até 10 vezes sem juros, com parcela mínima de R$ 30."
+    },
+    {
+      "tipo": "INSTRUCAO",
+      "titulo": "Prazo de entrega",
+      "pergunta": null,
+      "conteudo": "Enviamos para todo o Brasil pelos Correios e por transportadora. O prazo é de 2 a 4 dias úteis para capitais do Sudeste e de 5 a 12 dias úteis para as demais regiões, contado a partir da confirmação do pagamento."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Frete grátis",
+      "pergunta": "Quando o frete é grátis?",
+      "conteudo": "O frete é grátis para compras acima de R$ 299 em todo o país. Abaixo disso, o valor é calculado no carrinho pelo CEP."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Rastreamento do pedido",
+      "pergunta": "Como acompanho meu pedido?",
+      "conteudo": "Assim que o pedido é despachado, enviamos o código de rastreio por e-mail e WhatsApp. Você também acompanha em Minha conta > Pedidos."
+    },
+    {
+      "tipo": "INSTRUCAO",
+      "titulo": "Trocas",
+      "pergunta": null,
+      "conteudo": "A troca pode ser pedida em até 30 dias corridos após o recebimento, com o produto sem sinais de uso e na embalagem original. A primeira troca tem frete por nossa conta."
+    },
+    {
+      "tipo": "INSTRUCAO",
+      "titulo": "Devolução e reembolso",
+      "pergunta": null,
+      "conteudo": "Por arrependimento, você pode desistir da compra em até 7 dias após receber. O reembolso volta no mesmo meio de pagamento: pix em até 2 dias úteis e cartão em até duas faturas."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Loja física",
+      "pergunta": "Vocês têm loja física?",
+      "conteudo": "Sim. Nossa loja fica na Avenida Paulista, 1500, em São Paulo, e funciona de segunda a sábado, das 10h às 20h."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Retirada na loja",
+      "pergunta": "Posso retirar o pedido na loja?",
+      "conteudo": "Sim. Escolha retirada na loja no checkout: o pedido fica disponível em até 1 dia útil, sem custo de frete. Leve um documento com foto."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Cupom de desconto",
+      "pergunta": "Como uso um cupom de desconto?",
+      "conteudo": "Digite o código do cupom no carrinho, antes de finalizar. Só um cupom vale por compra e ele não se soma a produtos em promoção."
+    },
+    {
+      "tipo": "PERGUNTA_RESPOSTA",
+      "titulo": "Nota fiscal",
+      "pergunta": "Onde encontro a nota fiscal?",
+      "conteudo": "A nota fiscal eletrônica é enviada por e-mail quando o pedido é faturado e fica disponível para download em Minha conta > Pedidos. Para nota com CNPJ, informe o CNPJ antes de finalizar a compra."
+    },
+    {
+      "tipo": "INSTRUCAO",
+      "titulo": "Cadastro e senha",
+      "pergunta": null,
+      "conteudo": "Para trocar a senha, use Esqueci minha senha na tela de login: enviamos um link de redefinição para o e-mail cadastrado, válido por 1 hora."
+    },
+    {
+      "tipo": "INSTRUCAO",
+      "titulo": "Privacidade e dados pessoais",
+      "pergunta": null,
+      "conteudo": "Tratamos os dados pessoais conforme a LGPD. Para pedir a exclusão da sua conta e dos seus dados, escreva para privacidade@lojaexemplo.com.br."
+    }
+  ],
+  "documentos": [
+    {
+      "nome": "Manual de garantia",
+      "texto": "# Garantia\n\nTodos os eletrônicos têm 12 meses de garantia: 3 meses legais e 9 meses de garantia estendida do fabricante, contra defeitos de fabricação. A garantia não cobre queda, contato com líquido nem mau uso.\n\n# Assistência técnica\n\nSe o produto apresentar defeito, abra um chamado enviando fotos ou vídeo do problema e o número do pedido para suporte@lojaexemplo.com.br. A análise leva até 5 dias úteis e, se o defeito for confirmado, consertamos ou trocamos o produto.\n\n# Produto chegou quebrado\n\nSe o produto chegou avariado no transporte, recuse a entrega ou nos avise em até 48 horas com fotos da caixa e do produto. Enviamos outro sem custo."
+    },
+    {
+      "nome": "Guia de tamanhos",
+      "texto": "# Como medir\n\nUse uma fita métrica e meça o tórax na parte mais larga e a cintura na altura do umbigo.\n\n# Camisetas\n\nP: tórax de 88 a 94 cm. M: 95 a 101 cm. G: 102 a 108 cm. GG: 109 a 116 cm.\n\n# Calçados\n\nNossos calçados seguem a numeração brasileira. Se o seu pé estiver entre dois números, escolha o maior."
+    }
+  ]
+}
