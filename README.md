@@ -5,8 +5,9 @@ Chatbot de atendimento com agentes de IA, base de conhecimento com RAG e transfe
 **No ar:** https://aichatbot.otaviosbms.com.br · **Front-end:** [ai-chatbot-front](https://github.com/otaviosbms/ai-chatbot-front)
 
 <p>
-  <img src="docs/imagens/simulador-conversa.jpg" alt="Simulador: o bot responde o horário, anota nome, CPF e telefone de uma mensagem só e abre o protocolo" width="380">
-  <img src="docs/imagens/testar-busca.jpg" alt="Testar busca: trecho encontrado com as notas de vetor e de palavra" width="380">
+  <img src="docs/imagens/simulador-inicio.jpg" alt="Simulador: o bot responde o horário e anota nome, CPF e telefone de uma mensagem só" width="250">
+  <img src="docs/imagens/simulador-fim.jpg" alt="Simulador: o bot avisa os dados anotados, pede o e-mail e abre o protocolo" width="250">
+  <img src="docs/imagens/testar-busca.jpg" alt="Testar busca: trecho encontrado com as notas de vetor e de palavra" width="250">
 </p>
 
 ## Destaques
